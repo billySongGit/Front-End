@@ -3,9 +3,9 @@
     "use strict";
 
     angular.module(APPNAME)
-        .controller('accountWizardController', AccountWizardController);
+        .controller('accountPageController', AccountPageController);
 
-    AccountWizardController.$inject = [
+    AccountPageController.$inject = [
             '$scope'
             , '$baseController'
             , '$accountsService'
