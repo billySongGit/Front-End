@@ -1,0 +1,233 @@
+﻿@model Sabio.Web.Models.ViewModels.ItemViewModel<string>
+@{
+    Layout = "~/Views/Shared/_LayoutPublic.cshtml";
+
+}
+
+@section styles{
+    <link rel="stylesheet" href="~/Scripts/ng/ng-rateit.css" />
+    <link href="~/Scripts/app/lashProfile/css/connectionPage.css" rel="stylesheet" />
+    <link href="~/Scripts/app/lashProfile/css/LashProfile.css" rel="stylesheet" />
+    <link href="~/Scripts/app/lashProfile/css/pinterestPage.css" rel="stylesheet" />
+    <link href="~/Scripts/app/lashProfile/css/instagramPage.css" rel="stylesheet" />
+    <link href="~/Scripts/app/lashProfile/css/twitterPage.css" rel="stylesheet" />
+    <link href="~/Scripts/app/lashProfile/css/commentsPage.css" rel="stylesheet" />
+}
+
+@section header {
+    <div ng-cloak ng-controller="profileHeaderController as header">
+        <div class="page-header default-header profile-header theBackground"
+             data-parallax="active"
+             style="background-image: url('../../public_assets/img/bg.jpg'); background-position:center;" id="wizardProfile" actual-image="{{header.item.backgroundPicture}}" img-style="; background-position:center;">
+        </div>
+    </div>
+}
+
+<div class="main main-raised addMarginTop" ng-controller="profilesController as profile"
+     meta name="viewport" content="width=device-width">
+    <div class="profile-content" id="profileContent">
+
+        <div class="row" ng-cloak>
+
+            <div class="col-xs-3 heartCircleDiv" style="position:relative; margin-top:-25px;">
+                <button class="btn btn-fab btn-primary" rel="tooltip"
+                        ng-disabled="profile.canRate"
+                        ng-click="profile.toggleStars()">
+                    <i class="material-icons">favorite_border</i>
+                </button>
+                <div ng-show="profile.heartsShow" class="hearts">
+                    <ng-rate-it ng-model="profile.rateit"
+                            min="0"
+                            max="5"
+                            step=".5"
+                            resetable="false"
+                            hearts-width="20"
+                            hearts-height="20"
+                            rated="profile.onClickSubmitRating">
+                    </ng-rate-it>
+                </div>
+            </div>
+            <div class="col-xs-6 profileDiv">
+                <div class="profile" id="avatarDiv">
+                    <div class="avatar">
+                        <img ng-src="{{profile.item.avatarUrl}}" src="~/public_assets/img/placeholder.jpg" alt="Circle Image" class="img-circle img-responsive img-raised">
+                    </div>
+                    <div class="name">
+                        <h2 class="title">{{profile.item.firstName}} {{profile.item.lastName}}</h2>
+                        <h4>{{profile.item.accountType}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 profileDiv2">
+                <div class="profile">
+                    <div class="avatar">
+                        <img ng-src="{{profile.item.avatarUrl}}" alt="Circle Image" class="img-circle img-responsive img-raised">
+                    </div>
+                    <div class="name">
+                        <h2 class="title">{{profile.item.firstName}} {{profile.item.lastName}}</h2>
+                        <h4>Lash Girl</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 follow" style="margin-top:-25px; text-align:center;">
+                <div class="row followDiv" ng-controller="followController as follow">
+                    <button class="btn btn-round btn-primary" rel="tooltip" 
+                            title="{{ follow.followTooltip }}" 
+                            ng-click="follow.btnFollowSocial()" 
+                            ng-disabled="follow.canFollow">
+                        {{ follow.followStatus }}
+                        <i class="material-icons"> add </i>
+                    </button>
+                </div>
+                <h4 class="title">Stats</h4>
+                <ul class="list-unstyled statsList">
+                    <li><b>{{profile.totalFollowers}}</b> Followers</li>
+                    <li><b>{{profile.totalProducts}}</b> Products</li>
+                    <li><b>{{profile.totalRatings}}</b> Ratings</li>
+                    <li><b>{{profile.avgRating}}</b> Average Rating</li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+        <div class="description text-center row center" ng-cloak>
+            <h5 class="center text-center" id="bioLanding" ng-bind-html="profile.bio"></h5>
+            <button type="button" class="btn btn-round btn-primary" ng-if="profile.bio" ng-click="profile.readMoreBio()">
+                <span ng-show="profile.more">Read More</span>
+                <span ng-show="profile.less">Read Less</span>
+            </button>
+
+            <!-- ratings for when in mobile view -->
+            <div>
+                <div class="col-xs-3 col-xs-offset-2 heartDiv2">
+                    <button class="btn btn-fab btn-primary" rel="tooltip"
+                            ng-click="profile.toggleStars()">
+                        <i class="material-icons">favorite_border</i>
+                    </button>
+                    <div class="row starsRow">
+                        <div ng-show="profile.heartsShow" class="hearts">
+                            <ng-rate-it ng-model="profile.rateit"
+                                    min="0"
+                                    max="5"
+                                    step=".5"
+                                    resetable="false"
+                                    hearts-width="20"
+                                    hearts-height="20"
+                                    rated="profile.onClickSubmitRating">
+                            </ng-rate-it>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row followDiv2">
+                <button class="btn btn-fab btn-primary" rel="tooltip" title="{{ follow.followTooltip }}" ng-click="follow.btnFollowSocial()">
+                    {{ follow.followStatus }}
+                    <i class="material-icons"> add </i>
+                </button>
+            </div>
+        </div>
+        <div class="row" ng-cloak>
+            <div class="col-xs-12" id="tabs">
+                <div class="profile-tabs">
+                    <div class="nav-align-center" ng-controller="lashProfileTabController as lashTab">
+                        <ul class="nav nav-pills nav-pills-icons socialBtn" role="tablist">
+                            <li ng-class="lashTab.tabClass(tab)" ng-repeat="tab in lashTab.tabs track by $index">
+                                <a href="{{tab.link}}"
+                                   role="tab"
+                                   data-toggle="#"
+                                   ng-click="lashTab.setSelectedTab(tab)"
+                                   ng-bind-html="tab.icon | to_trusted">
+                                </a>
+                            </li>
+                            <!-- last tab -->
+                            <li ng-if="profile.profileItem.videoUrl">
+                                <a href="" type="button" role="tab" ng-click="lashTab.openVideo(profile.item)">
+                                    <i class="material-icons">videocam</i>Video
+                                </a>
+                            </li>
+                            <li ng-if="lashTab.accountSettings.canHaveBlog && lashTab.accountSettings.canShowBlog">
+                                <a href="/blogs/profile/{{ lashTab.accountSettings.handle }}" role="tab">
+                                    <i class="material-icons">palette</i>Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Profile Tabs -->
+            </div>
+        </div>
+        <div ng-cloak class="tab-content row" id="ngViewId" ng-view>
+
+            <!-- ng-views go in here -->
+        </div>
+    </div>
+</div>
+
+
+@section pageInitScripts {
+    <script src="~/Scripts/sabio/sabio.module.smoothScroll.js"></script>
+    <script src="~/Scripts/ngSmoothScroll-master/dist/angular-smooth-scroll.min.js"></script>
+    <script src="~/Scripts/ngSmoothScroll-master/lib/angular-smooth-scroll.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
+    <script src="~/Scripts/angularjs-geolocation.min.js"></script>
+    <script src="~/Scripts/sabio/sabio.module.geolocation.js"></script>
+    <script src="~/Scripts/sabio/sabio.module.rateIt.js" type="text/javascript"></script>
+    <script src="~/Scripts/ng/ng-rateit.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Scripts/sabio/sabio.module.paging.js"></script>
+    <script type="text/javascript" src="~/Scripts/paging.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZHv4nuh3RWQ5m7adx7yneEzQ98oMii0E&libraries=visualization"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js"></script>
+    <script src="~/Scripts/sabio/sabio.module.ngSanitize.js"></script>
+    <script src="~/Scripts/ng/angular-sanitize.js"></script>
+
+}
+
+
+@section scripts {
+    <script src="/dynamic/js/ng/ownertypes" type="text/javascript"></script>
+    <script src="~/Scripts/app/general/sweetAlert.js"></script>
+    <script src="~/Scripts/app/addresses/geoService.js"></script>
+    <!-- Services -->
+    <script src="~/Scripts/app/general/registerService.js"></script>
+    <script type="~/Scripts/sabio.services.accounts.js"></script>
+    <script src="~/Scripts/sabio.services.ratings.js" type="text/javascript"></script>
+    <script src="~/Scripts/sabio.services.followers.js"></script>
+    <script src="~/Scripts/sabio/sabio.services.pinterest.js"></script>
+    <script src="~/Scripts/sabio.services.media.js"></script>
+    <script src="~/Scripts/sabio.services.twitter.js"></script>
+    <script src="~/Scripts/sabio.services.userrole.js"></script>
+    <script src="~/Scripts/app/services/userRoleService.js"></script>
+    <script src="~/Scripts/sabio.services.comments.js"></script>
+    <script src="~/Scripts/sabio.services.statsTrack.js" type="text/javascript"></script>
+
+    <!-- Factories-->
+    <script src="~/Scripts/app/lashProfile/factory/pinterestService.js"></script>
+    <script src="~/Scripts/app/lashProfile/factory/mediaService.js"></script>
+    <script src="~/Scripts/app/lashProfile/factory/ratingService.js"></script>
+    <script src="~/Scripts/app/account/factory/followerService.js"></script>
+    <script src="~/Scripts/app/lashProfile/factory/accountsService.js"></script>
+    <script src="~/Scripts/app/lashProfile/factory/twitterService.js"></script>
+    <script src="~/Scripts/app/account/factory/statsTrackService.js" type="text/javascript"></script>
+    <script src="~/Scripts/app/lashProfile/factory/commentsService.js"></script>
+    <script src="~/Scripts/app/services/accountSettingService.js"></script>
+
+
+    <!-- Route Config -->
+    <script src="~/Scripts/app/lashProfile/factory/lashProfileRouteConfig.js"></script>
+
+    <!-- CONTROLLERS  -->
+    <script src="~/Scripts/app/lashProfile/controller/lashProfileTabController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/profileController.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/controllers/followerController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/followerPageController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/pinterestController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/mediaController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/instagramModalController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/commentsPageController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/twitterPageController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/profileHeaderController.js"></script>
+    <script src="~/Scripts/app/lashProfile/controller/videoModalController.js"></script>
+
+    <!-- Directive for loading default background image and replace it when the
+        actual background image for this profile is finished loading. -->
+    <script src="~/Scripts/app/directives/onImageLoad.js"></script>
+}
