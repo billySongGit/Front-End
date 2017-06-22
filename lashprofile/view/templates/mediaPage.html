@@ -1,0 +1,30 @@
+﻿<div class="container-fluid feedContainer row center col-md-12" id="media">
+    <div class="row feedRow col-md-12">
+        <div class="col-md-3 feedCard" ng-repeat="item in mc.items">
+            <div class="card card-profile" ng-click="mc.openModal(item)">
+                <div class="card-image">
+                    <a @*href="#" *@ id="mainImage" class="mImage">
+                        <img class="img" src="~/assets/img/faces/card-profile2-square.jpg" ng-src="{{item.images.standardResolution.url}}" ng-hide="item.videos.standardResolution.url">
+                        <video width="325" height="325" controls ng-show="item.videos.standardResolution.url" ng-src="{{item.videos.standardResolution.url}}">
+                            <source src="" type="video/mp4">
+                        </video>
+                        <div class="card-title mUserName" ng-hide="item.videos.standardResolution.url">
+                            {{item.user.username}}
+                        </div>
+                    </a>
+                </div>
+                <div class="content">
+                    <h6 class="category text-info">Lash Bro</h6>
+                    <p class="card-description" ng-show="item.caption.text">
+                        {{item.caption.text}}
+                    </p>
+                    <p class="card-description" ng-show="!item.caption.text">
+                        Lash it Up
+                    </p>
+                    <div class="footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

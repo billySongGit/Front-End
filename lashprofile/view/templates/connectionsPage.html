@@ -1,0 +1,31 @@
+﻿<!-- connection tab  -->
+<div class="tab-pane active connections center">
+    <div class="col-xs-4 followerCount center">
+        <h3>Total Followers: {{followerCtrl.totalCount}}</h3>
+    </div>
+    <div class="container-fluid body center" id="connections">
+        <div class="col-md-12 row followerCardsDiv center">
+            <div id="follower_{{followerItem.handle}}" ng-repeat="followerItem in followerCtrl.pagedItems track by followerItem.handle" class="col-md-2 container-fluid animate-repeat card-content" ng-include="'/Scripts/app/account/template/followerTemplate.html'" ng-click="followerCtrl.showOnMap(followerItem, $event)">
+            </div>
+        </div>
+        <div class="text-center row center" id="pagination">
+            <paging class="small"
+                    page="followerCtrl.currentPage"
+                    page-size="followerCtrl.pageSize"
+                    total="followerCtrl.totalCount"
+                    pg-href="{{pgHref}}"
+                    adjacent="{{adjacent}}"
+                    dots="{{dots}}"
+                    hide-if-empty="{{hideIfEmpty}}"
+                    show-prev-next="{{showPrevNext}}"
+                    show-first-last="{{showFirstLast}}"
+                    paging-action="followerCtrl.ctrlPagination(page, pageSize)">
+            </paging>
+        </div>
+        <div class="followerMapDiv center" id="followerMapDiv">
+            <!-- put in map here -->
+            <div id="followerMap" class="center">
+            </div>
+        </div>
+    </div>
+</div>

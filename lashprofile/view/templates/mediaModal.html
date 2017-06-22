@@ -1,0 +1,27 @@
+﻿<div class="modal-header text-right allPics">
+    <button type="button" rel="tooltip" ng-click="mediaModal.cancel()" class="btn btn-danger btn-round btn-fab btn-fab-mini">
+        <i class="material-icons">close</i>
+    </button>
+
+</div>
+<div class="modal-body">
+    <div class="card-image">
+        <a @*href="#" *@ id="mainImage" class="mImage">
+            <img class="img" src="~/assets/img/faces/card-profile2-square.jpg" ng-src="{{mediaModal.modalItem.images.standardResolution.url}}" ng-hide="mediaModal.modalItem.videos.standardResolution.url">
+            <video width="325" height="325" controls ng-show="mediaModal.modalItem.videos.standardResolution.url" ng-src="{{mediaModal.modalItem.videos.standardResolution.url}}">
+                <source src="" type="video/mp4">
+            </video>
+            <div class="card-title mUserName" ng-hide="mediaModal.videos.standardResolution.url">
+                {{mediaModal.modalItem.user.username}}
+            </div>
+        </a>
+    </div>
+    <div class="content">
+        <h6 class="category text-info">Lash Bro</h6>
+        <p class="card-description" ng-show="mediaModal.modalItem.caption.text">{{mediaModal.modalItem.caption.text}}</p>
+        <p class="card-description" ng-show="!mediaModal.modalItem.caption.text">Lash it Up</p>
+        <div class="footer">
+        </div>
+    </div>
+</div>
+

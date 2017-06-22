@@ -1,0 +1,13 @@
+﻿<div class="modal-header text-right allPics">
+    <button type="button" rel="tooltip" ng-click="VMC.cancel()" class="btn btn-danger btn-round btn-fab btn-fab-mini">
+        <i class="material-icons">close</i>
+    </button>
+</div>
+<div class="modal-body col-md-10 center">
+    <div id="lashProfileVideoDiv" class="center">
+        <iframe ng-src="{{VMC.trustSrc(VMC.videoUrl)}}"
+                width="641" height="360"
+                id="lashProfileVideoIFrame"
+                allowfullscreen frameborder="0"></iframe>
+    </div>
+</div>

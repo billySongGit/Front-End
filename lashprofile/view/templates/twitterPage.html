@@ -1,0 +1,15 @@
+﻿<div class="tab-pane active row text-center gallery col-md-12 center" id="twitter">
+    <div class="row" id="twitterLandingPin">
+        <div ng-repeat="tweet in twitterCtrl.tweet">
+            <div class="ng-cloak" ng-bind-html="tweet.html | to_trusted" ng-cloak></div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="loadingGifDiv" class="center">
+            <img src="/assets/img/loadingGif.svg" ng-hide="twitterCtrl.hideLoadingGif"
+                 id="loadingGif" class="center" />
+        </div>
+        <button class="btn btn-primary btn-round" type="button" ng-click="twitterCtrl.loadMore()">Load More</button>
+    </div>
+</div>
+<!-- repeat until max. change max after 3 seconds. google ng-repeat limit-->
