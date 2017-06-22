@@ -1,0 +1,90 @@
+﻿
+/*   picture modal    */
+
+.center {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.card.card-profile.picOutFrame {
+    min-height: 300px;
+    max-height: 300px;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+    div.card.card-profile.picOutFrame:hover {
+        display: block;
+        background: rgba(0, 0, 0, .3);
+        overflow: visible;
+    }
+
+        div.card.card-profile.picOutFrame:hover .deletePicture {
+            opacity: 1;
+            /*text-align: center;*/
+        }
+
+.card-raised.card-image {
+    height: 300px;
+    object-fit: cover;
+}
+
+.thumbnail {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 0px;
+}
+
+    .thumbnail:hover {
+        overflow: visible;
+    }
+
+.image > img {
+    border-radius: 65px;
+    flex-shrink: 0;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+}
+
+.deletePicture {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    bottom: 5%;
+    transition: opacity .35s ease;
+}
+
+card-image img.displayPic {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wide {
+    max-height: 100%;
+    height: auto;
+}
+
+.tall {
+    max-width: 100%;
+    width: auto;
+}
+
+#allPictures {
+    margin-top: 50px;
+}
+
+#addPictureBtn {
+    cursor: pointer;
+}

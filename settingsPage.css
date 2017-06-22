@@ -1,0 +1,25 @@
+﻿#videoUrl {
+    width: 65%;
+    height: 100%;
+    /*text-align: right;*/
+}
+
+.settings-container {
+    position: relative;
+    text-align: left;
+}
+
+.card-divider {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+#urlFormAndBtn {
+    /*padding-top: 2%;*/
+    position: relative;
+    padding-left: 3%;
+}
+
+.backgroundPicture-src {
+    border-radius: 50%;
+}

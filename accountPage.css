@@ -1,0 +1,131 @@
+﻿/*Mobile Device*/
+@media(max-width:600px) {
+    .nav-tabs > li {
+        float: none;
+    }
+
+    .nav-tabs > li {
+        float: none;
+    }
+
+    li.tabs {
+        width: 100% !important;
+    }
+
+    .thumbnail {
+        width: inherit;
+    }
+
+    .nav-pills:not(.nav-pills-icons) > li > a {
+        border-radius: 0px !important;
+    }
+}
+
+/* tab view */
+.wizard-card[data-color="rose"] .form-group .form-control {
+    background-image: linear-gradient(#9c27b0,#9c27b0),linear-gradient(#D2D2D2,#D2D2D2);
+}
+
+.nav-pills:not(.nav-pills-icons) > li > a {
+    font-size: 30px;
+}
+
+.tab-content {
+    padding-top: 0px !important;
+}
+
+.card-title {
+    margin-left: 30px;
+}
+
+.nav-pills:not(.nav-pills-icons) > li > a {
+    font-size: 15px;
+}
+
+.wizard-card .moving-tab {
+    font-size: 20px;
+}
+
+.card-image.card-case {
+    height: 150px;
+    width: 150px;
+}
+
+ul.nav {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+li.tabs-admin {
+    margin: 0px !important;
+    width: 33.33%;
+}
+
+li.tabs-public {
+    margin: 0px !important;
+    width: 50%;
+}
+
+#wizardProfile div.wizard-navigation li.active {
+    background-color: #e91e63;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(233, 30, 99, 0.4);
+    color: #FFFFFF !important;
+    font-weight: 500;
+}
+
+
+/*   account page*/
+.picture-container {
+    padding-top: 40px;
+}
+
+.picture-src {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#accountForm > div.col-md-10.col-md-offset-1 {
+    margin-left: 5%;
+}
+
+#bio {
+    border-style: ridge !important;
+    border-width: 1px !important;
+    border-radius: 0 !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+}
+
+
+.category.handle {
+    text-align: center;
+    overflow: hidden;
+}
+
+.category.name {
+    text-align: center;
+    overflow: hidden;
+}
+
+
+[ng-click],
+[data-ng-click],
+[x-ng-click], .addBPicture {
+    cursor: pointer;
+}
+
+.has-error {
+    color: red;
+}
+
+.btn-nonsocial {
+    color: rgb(173, 26, 120) !important;
+}
+
+.zero-padding-top {
+    padding-top: 0px !important;
+}
