@@ -10,8 +10,7 @@
 
             $routeProvider.when('/', {
                 templateUrl: '/Scripts/app/account/template/accountPage.html',
-                controller: 'accountWizardController',
-                controllerAs: 'accountController'
+                controller: 'accountController'
             }).when('/password', {
                 templateUrl: '/Scripts/app/account/template/passwordPage.html',
                 controller: 'accountPasswordController',
