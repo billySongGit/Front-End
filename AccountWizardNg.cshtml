@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "AccountWizardNg";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@section style{
+    <link href="~/Content/pictures-uploadCrop.css" rel="stylesheet" />
+    <link href="~/Content/jquery.Jcrop.css" rel="stylesheet" />
+    <link href="~/Scripts/app/account/css/followerModal.css" rel="stylesheet" />
+    <link href="~/Scripts/app/account/css/pictureModal.css" rel="stylesheet" />
+    <link href="~/Scripts/app/account/css/accountPage.css" rel="stylesheet" />
+    <link href="~/Scripts/app/account/css/settingsPage.css" rel="stylesheet" />
+
+}
+<div class="content">
+    <div class="container-fluid">
+        <div class="col-md-8 col-sm-offset-2">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card" data-color="rose" id="wizardProfile">
+                    <div class="wizard-header">
+                        <h2 class="wizard-title">
+                            Your Account
+                        </h2>
+                    </div>
+                    <!--        for the tab at the top of the card        -->
+                    <div class="wizard-navigation" ng-controller="accountTabController as acctTabCtrl" id="accountTabs">
+                        <ul class="nav-pills nav nav-tabs">
+                            <li class="nav-pills nav nav-tabs tabs-admin"
+                                data-color="rose"
+                                get-value-to-check="acctTabCtrl.checkIsInfluencer()"
+                                remove-class="tabs-admin"
+                                add-class="tabs-public"
+                                ng-class="acctTabCtrl.tabClass(tab)"
+                                ng-repeat="tab in acctTabCtrl.tabs">
+                                <a href="{{tab.link}}" ng-click="acctTabCtrl.setSelectedTab(tab)">{{tab.label}}</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content active" ng-view></div>
+                        <!--        views go in here        -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section pageInitScripts {
+    <script type="text/javascript" src="~/Scripts/sabio/sabio.module.paging.js"></script>
+    <script type="text/javascript" src="~/Scripts/paging.js"></script>
+    <script src="~/Scripts/sabio/sabio.module.smoothScroll.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZHv4nuh3RWQ5m7adx7yneEzQ98oMii0E&libraries=visualization"></script>
+}
+
+@section scripts {
+    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
+
+    @*~~~~~~~~~~~~~~~~~~~~~factories (ordered alphabetically)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*@
+    <script src="~/Scripts/app/account/factory/accountRouteConfig.js"></script>
+    <script src="~/Scripts/app/account/factory/accountsService.js"></script>
+    <script src="~/Scripts/app/account/factory/fileService.js"></script>
+    <script src="~/Scripts/app/account/factory/followerService.js"></script>
+    <script src="~/Scripts/app/account/factory/imageService.js"></script>
+    <script src="~/Scripts/app/lashProfile/factory/mediaService.js"></script>
+    <script src="~/Scripts/app/account/factory/statsTrackService.js"></script>
+
+    @*~~~~~~~~~~~~~~~~~~~~~directives  (ordered alphabetically)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*@
+    <script src="~/Scripts/app/directives/enterPress.js"></script>
+    <script src="~/Scripts/app/directives/passwordVerify.js"></script>
+    <script src="~/Scripts/ngSmoothScroll-master/dist/angular-smooth-scroll.min.js"></script>
+    <script src="~/Scripts/ngSmoothScroll-master/lib/angular-smooth-scroll.js"></script>
+    <script src="~/Scripts/app/directives/removeClass.js"></script>
+    <script src="~/Scripts/app/directives/addClass.js"></script>
+
+    @*~~~~~~~~~~~~~~~~~~~~~services  (ordered alphabetically)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*@
+    <script src="~/Scripts/app/services/accountSettingService.js"></script>
+    <script src="~/Scripts/app/account/service/cropService.js"></script>
+    <script src="~/Scripts/app/addresses/geoService.js"></script>
+    <script src="~/Scripts/app/general/registerService.js"></script>
+    <script src="~/Scripts/app/general/sweetAlert.js"></script>
+    <script src="~/Scripts/jquery.Jcrop.js"></script>
+    <script src="~/Scripts/jquery.Jcrop.min.js"></script>
+    <script src="~/Scripts/sabio.services.accounts.js"></script>
+    <script src="~/Scripts/sabio.services.files.js"></script>
+    <script src="~/Scripts/sabio.services.followers.js"></script>
+    <script src="~/Scripts/sabio.services.images.js"></script>
+    <script src="~/Scripts/sabio.services.media.js"></script>
+    <script src="~/Scripts/sabio.services.register.js"></script>
+    <script src="~/Scripts/sabio.services.statsTrack.js"></script>
+    <script src="~/Scripts/sabio.services.swal.js"></script>
+
+    @*~~~~~~~~~~~~~~~~~~~~~controllers (ordered alphabetically)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*@
+    <script src="~/Scripts/app/account/controller/accountTabController.js"></script>
+    <script src="~/Scripts/app/account/controller/accountPasswordController.js"></script>
+    <script src="~/Scripts/app/account/controller/accountFormController.js"></script>
+    <script src="~/Scripts/app/account/controller/accountWizardController.js"></script>
+    <script src="~/Scripts/app/account/controller/followerController.js"></script>
+    <script src="~/Scripts/app/account/controller/pictureCropController.js"></script>
+    <script src="~/Scripts/app/account/controller/settingsController.js"></script>
+}
