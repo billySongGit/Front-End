@@ -1,0 +1,302 @@
+﻿
+@media(max-width: 2560px) {
+    .twitter-tweet {
+        min-width: 500px !important;
+    }
+}
+
+@media(max-width: 1550px) {
+    .twitter-tweet {
+        min-width: 500px !important;
+    }
+}
+
+@media(max-width: 430px) {
+    .twitter-tweet {
+        min-width: 325px !important;
+    }
+}
+
+@media(max-width: 320px) {
+    .twitter-tweet {
+        min-width: 275px !important;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .page-header {
+        height: auto;
+        min-height: 0vh !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-raised {
+        /*height: 650px;*/
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-tabs .nav-align-center {
+        text-align: center;
+    }
+
+    .heartCircleDiv {
+        display: none;
+    }
+
+    .followDiv {
+        display: none;
+    }
+
+    .profileDiv {
+        display: none;
+    }
+
+    .profile-content {
+        margin-top: -170px;
+    }
+
+    .name {
+        text-align: center;
+    }
+
+    .socialBtn {
+        margin-right: 20px;
+    }
+
+    .starsRow {
+        margin-left: 5px;
+    }
+
+    .nav-pills > li {
+        width: 58px;
+        margin-right: 5px;
+    }
+
+        .nav-pills > li i {
+            font-size: 23px;
+        }
+
+        .nav-pills > li > a {
+            font-size: 9px;
+        }
+}
+
+@media (min-width: 600px) {
+    .followDiv2 {
+        display: none;
+    }
+
+    .heartCircleDiv {
+        margin-left: 18%;
+    }
+
+    .heartDiv2 {
+        display: none;
+    }
+
+    .profileDiv {
+        margin-left: -18%;
+    }
+
+    .profileDiv2 {
+        display: none;
+    }
+
+    .profile-content {
+        margin-top: -110px;
+    }
+
+    .follow {
+        padding-left: 0px !important;
+    }
+}
+
+body > div.main.main-raised.ng-scope > div > div.description.text-center.row.center {
+    margin-top: -5px;
+    margin-bottom: 0;
+}
+
+.profileDiv > #avatarDiv > .name > h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.statsList {
+    text-align: center;
+}
+
+
+.hearts .ngrateit-star {
+    background-size: 20px;
+}
+
+.hearts .ngrateit-bg-star {
+    margin: auto;
+    background-size: 20px;
+    background-image: url("https://www.clker.com/cliparts/K/s/1/Z/m/p/grey-heart.svg");
+}
+
+/*Selected state Yellow*/
+.hearts .ngrateit-selected {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/32/WikiFont_uniE033_-_heart_-_red.svg");
+}
+
+/* Cancelation of hover styling */
+.hearts .ngrateit-rating span:hover ~ span {
+    background-image: url("https://www.clker.com/cliparts/K/s/1/Z/m/p/grey-heart.svg") !important;
+}
+
+/* Hover styling Red */
+.hearts .ngrateit-rating:hover span {
+    background-image: url("https://www.clker.com/cliparts/j/0/3/Z/1/v/gold-heart.svg") !important;
+}
+
+.mUserName {
+    padding-bottom: 1em;
+}
+
+.main {
+    background-color: #f7ecec;
+    min-height: 434px;
+    margin-bottom: 110px;
+}
+
+.addMarginTop {
+    margin-top: 300px;
+}
+
+.card-description {
+    word-wrap: break-word;
+}
+
+.row.feedRow {
+    float: none;
+}
+
+div.feedContainer.row {
+    clear: both;
+}
+
+div.feedCard {
+    clear: both;
+}
+
+#profileContent {
+    margin-bottom: 110px;
+}
+
+#landingPin { /* Masonry container */
+    column-count: 4;
+    column-gap: 1em;
+}
+
+.pinTemp { /* Masonry bricks or child elements */
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 1em;
+    width: 100%;
+}
+
+#tabs {
+    height: 110px;
+}
+
+div.profile-tabs {
+    z-index: 900;
+    height: inherit;
+    margin-top: 0 !important;
+}
+
+.profile-header {
+    height: 50vh;
+}
+
+.profile-page .profile img {
+    margin: 0 auto 0 auto !important;
+}
+
+.hearts {
+    margin-top: 10px;
+    margin-left: -15px;
+    background: 20px;
+}
+
+div.tab-pane {
+    padding-top: 0;
+}
+
+    div.tab-pane > div.row {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+div.description {
+    margin-bottom: 20px !important;
+}
+
+.btn.btn-round.btn-primary.ng-hide {
+    visibility: hidden;
+    display: block !important;
+}
+
+.btn.btn-fab.btn-primary.ng-hide {
+    visibility: hidden;
+    display: block !important;
+}
+
+/* bio css*/
+h5.text-center {
+    margin-bottom: 0;
+    max-height: 100px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+    h5.text-center:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    h5.text-center:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    h5.text-center.fullBio {
+        max-height: none;
+    }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.theBackground {
+    object-fit: cover;
+}
+
+#lashProfileVideoDiv {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.21%;
+}
+
+#lashProfileVideoIFrame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}

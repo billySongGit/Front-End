@@ -1,0 +1,172 @@
+﻿/*connection page*/
+.center {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#followerCard {
+    min-height: 176.05px;
+    max-height: 176.05px;
+    margin-bottom: 30px;
+}
+
+    #followerCard > div.card.card-product {
+        min-height: 176.05px;
+        max-height: 176.05px;
+        margin-bottom: 30px;
+    }
+
+    #followerCard > div.card.card-profile {
+        min-height: 176.05px !important;
+        max-height: 176.05px;
+        margin-bottom: 30px;
+        overflow: visible !important;
+    }
+
+    #followerCard > img.avatarUrl {
+        height: 130px;
+    }
+
+    #followerCard > .card.card-profile {
+        height: 172px;
+    }
+
+        #followerCard > .card.card-profile > .card-avatar.card-image {
+            height: 130px !important;
+        }
+
+    #followerCard > div.card-content {
+        padding-top: 5px !important;
+        margin-top: 5px !important;
+    }
+
+    #followerCard > div.handle {
+        text-align: center;
+    }
+
+    #followerCard > div.category.name {
+        text-align: center;
+        word-break: break-all;
+    }
+
+#connections > div.followerDiv.text-center {
+    padding-top: 30px;
+}
+
+#ngViewId > div {
+    padding-top: 0;
+}
+
+div.connections {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+div.followerCount {
+    float: none;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+    z-index: -1;
+    padding-top: 0;
+}
+
+div.followerCardsDiv {
+    height: 500px !important;
+}
+
+#pagination {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* follower markers */
+#followerMap {
+    float: none;
+    margin: 0 auto;
+    width: 90%;
+    height: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    #followerMap div.gm-style-iw div.tooltip-inner {
+        display: none !important;
+    }
+
+    #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div {
+        width: 170px !important;
+    }
+
+        #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div.gm-style-iw {
+            overflow: visible;
+            text-align: center !important;
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            left: 0px !important;
+        }
+
+        #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(2) {
+            width: 170px !important;
+        }
+
+        #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(4) {
+            width: 170px !important;
+        }
+
+        #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div.gm-style-iw > div:nth-child(1) {
+            overflow: visible !important;
+            text-align: center !important;
+            float: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 170px !important;
+        }
+
+            #followerMap > div > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(4) > div > div.gm-style-iw > div:nth-child(1) > div {
+                margin-right: 20px !important;
+                float: none;
+                margin-left: auto;
+                margin-right: auto;
+                overflow: visible !important;
+            }
+
+#followerCard #followerCard {
+    text-align: center;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category.handle {
+    text-align: center;
+    overflow: hidden;
+}
+
+.category.name {
+    text-align: center;
+    overflow: hidden;
+}
+
+#followerMap .card [data-header-animation="true"] {
+    /*CSS transitions*/
+    -o-transition-property: none !important;
+    -moz-transition-property: none !important;
+    -ms-transition-property: none !important;
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    /*CSS transforms*/
+    -o-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    /*CSS animations*/
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+}

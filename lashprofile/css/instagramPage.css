@@ -1,0 +1,52 @@
+﻿/* The two below enable 4 columns per row for media feed*/
+.feedContainer > .feedRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .feedContainer > .feedRow .feedCard {
+        flex-grow: 1;
+        width: 25%;
+        height: 350px;
+    }
+
+        .feedContainer > .feedRow .feedCard > .card-profile {
+            height: 300px;
+            margin-bottom: 10px;
+            overflow: visible;
+        }
+
+            .feedContainer > .feedRow .feedCard > .card-profile > .content {
+                height: 350px;
+                white-space: nowrap;
+                overflow: hidden !important;
+            }
+
+                .feedContainer > .feedRow .feedCard > .card-profile > .content > .card-description {
+                    height: /*white-space: nowrap;*/ 200px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+            .feedContainer > .feedRow .feedCard > .card-profile > .card-image {
+                height: 240px !important;
+                overflow: hidden;
+            }
+
+#mainImage > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.feedContainer > .feedRow .feedCard > .card .content {
+    max-height: 136px !important;
+}
+
+.modal-backdrop.in {
+    opacity: 1.5 !important;
+}
+
+#mainImage > video {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,12 @@
+﻿#pinterest {
+    float: none;
+    /*overflow: hidden;*/
+}
+
+#landingPin {
+    clear: both;
+}
+
+div.pinTemp {
+    padding: 0px, 0px, 0px, 0px;
+}
