@@ -1,0 +1,21 @@
+﻿#comments button {
+    margin-top: 0;
+}
+
+#comment-footer, #replyFooter {
+    height: 20px;
+}
+
+    #replyFooter > button {
+        margin: 0;
+        padding-top: 0;
+    }
+
+#description {
+    margin-bottom: 0;
+}
+
+#replyTemplate {
+    margin-top: 1%;
+    margin-bottom: 0;
+}
