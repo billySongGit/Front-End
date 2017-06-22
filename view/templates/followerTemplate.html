@@ -1,0 +1,24 @@
+﻿<div class="followerCard card-product" id="followerCard">
+    <div class="card card-profile follower-card center">
+        <div class="card-avatar card-image animated center" data-header-animation="true">
+            <a href="">
+                <img class="avatarUrl" src="{{followerItem.avatarUrl}}" id="avatarUrl" />
+                <div class="ripple-container"></div>
+            </a>
+        </div>
+        <div class="card-content center">
+            <div class="card-actions center">
+                <button type="button" rel="tooltip" class="btn btn-simple btn-danger deleteFollower" data-original-title="Remove Follower" ng-click="followerCtrl.deleteFollower(followerItem, $index)" tooltip-animation="false" uib-tooltip="delete follower" tooltip-placement="bottom">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+            <h6 class="category name text-gray center" tooltip-animation="false" uib-tooltip="{{followerItem.firstName}} {{followerItem.lastName}}"><b class="firstName center">{{followerItem.firstName}}</b> <b class="lastName center">{{followerItem.lastName}}</b></h6>
+
+            <div class="category text-gray handle" tooltip-animation="false" uib-tooltip="{{followerItem.handle}}">{{followerItem.handle}}</div>
+
+            <div class="userId hidden">{{followerItem.userId}}</div>
+            <div class="followerIdHolding hidden" ng-model="followerItem.followerId">{{followerItem.followerId}}</div>
+            <div class="profileIdHolding hidden">{{followerItem.profileId}}</div>
+        </div>
+    </div>
+</div> 

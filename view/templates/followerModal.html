@@ -1,0 +1,36 @@
+﻿<div class="modal-header text-right center" id="paginationSettings">
+    <button type="button" rel="tooltip" data-dismiss="modal" ng-click="followerCtrl.cancel()" class="btn btn-danger btn-round btn-fab btn-fab-mini">
+        <i class="material-icons">close</i>
+    </button>
+    <div class="col-xs-4">
+        <h3>Total Followers: {{followerCtrl.totalCount}}</h3>
+    </div>
+</div>
+<div class="container-fluid modal-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="follower_{{followerItem.handle}}" ng-repeat="followerItem in followerCtrl.pagedItems track by followerItem.followerId" class="col-md-2 container-fluid animate-repeat card-content" ng-include="'/Scripts/app/account/template/followerTemplate.html'" ng-click="followerCtrl.showOnMap(followerItem, $event)">
+            </div>
+        </div>
+    </div>
+    <div class="text-center row">
+        <paging class="small"
+                page="followerCtrl.currentPage"
+                page-size="followerCtrl.pageSize"
+                total="followerCtrl.totalCount"
+                pg-href="{{pgHref}}"
+                adjacent="{{adjacent}}"
+                dots="{{dots}}"
+                hide-if-empty="{{hideIfEmpty}}"
+                show-prev-next="{{showPrevNext}}"
+                show-first-last="{{showFirstLast}}"
+                paging-action="followerCtrl.ctrlPagination(page, pageSize)">
+        </paging>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <div id="followerMap">
+        <!-- put in map here. can do pagination on map.-->
+    </div>
+</div>

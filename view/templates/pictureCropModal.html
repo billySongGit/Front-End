@@ -1,0 +1,17 @@
+﻿<div class="modal-header  text-right">
+    <button type="button" rel="tooltip" data-dismiss="modal" ng-click="pcc.cancel()" class="btn btn-danger btn-round btn-fab btn-fab-mini">
+        <i class="material-icons">close</i>
+    </button>
+</div>
+<form id="picForm">
+    <div class="modal-body">
+        <div id="picViews"></div>
+    </div>
+</form>
+<div class="footer">
+    <div>
+        <button id="cropbutton" type="button" class="btn btn-default" ng-click="pcc.crop()"><i class="material-icons">crop</i>Crop</button>
+        <button id="rotatebutton" type="button" ng-click="pcc.rotate()" class="btn btn-default"><i class="material-icons">rotate_right</i>Rotate</button>
+        <button id="submitCroppedPicBtn" type="button" ng-click="pcc.uploadPic()" class="pull-right btn btn-success"><i class="material-icons">file_upload</i>Upload</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿<div class="modal-header text-right allPics">
+    <form id="pictureForm">
+        <label for="addPicture" class="pull-left" id="addPictureBtn">
+            <input type="file" id="addPicture" name="addPicture" accept="image/x-png,image/gif,image/jpeg,image/jpg"
+                   onchange="angular.element($('.allPics')[0]).scope().afc.addPicture(this);"
+                   class="hidden pull-left">
+            <i class="material-icons addPicture">file_upload</i>
+            Upload a picture!
+        </label>
+
+    </form>
+    <button type="button" rel="tooltip" ng-click="afc.cancel()" class="btn btn-danger btn-round btn-fab btn-fab-mini">
+        <i class="material-icons">close</i>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row" id="allPictures">
+        <div class="col-md-4 col-sm-4 col-xs-4 thumbnail animate-repeat" ng-repeat="singleItem in afc.modalItems | orderBy: '_'">
+
+            <div class="col-md-1 card card-profile picOutFrame">
+
+                <div id="toggle" class="card-raised card-image cardCase animated" data-header-animation="true" ng-click="afc.changeAvatar(singleItem)">
+                    <a data-title="Lash Girl" class="image">
+                        <img id="displayPic " class="displayPic img-rounded" ng-src="{{afc.fixUrl(singleItem.imageUrl)}}">
+                    </a>
+
+                </div>
+                <button type="button" rel="tooltip" class="btn btn-danger deletePicture center pull-right" ng-click="afc.deletePicture(singleItem, $index)">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
