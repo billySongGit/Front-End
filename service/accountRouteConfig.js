@@ -10,11 +10,12 @@
 
             $routeProvider.when('/', {
                 templateUrl: '/Scripts/app/account/template/accountPage.html',
-                controller: 'accountController'
+                controller: 'accountController',
+                controllerAs: 'ac'
             }).when('/password', {
                 templateUrl: '/Scripts/app/account/template/passwordPage.html',
                 controller: 'accountPasswordController',
-                controllerAs: 'passwordController'
+                controllerAs: 'pc'
             }).when('/settings', {
                 templateUrl: '/Scripts/app/account/template/settingsPage.html',
                 controller: 'settingsController',
