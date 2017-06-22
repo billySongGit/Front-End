@@ -1,0 +1,45 @@
+﻿<div class="tab-pane active" id="settings">
+    <div class="row">
+        <h4 class="info-text" align="center">Customize your Settings</h4>
+        <div class="settings-container card-divider col-md-offset-1 col-md-10">
+            <div class="backgroundPic center text-center">
+                <h6>Choose a background picture</h6>
+                <img src="{{sc.item.backgroundPicture}}" class="backgroundPicture-src picture-src" id="wizardPicturePreview" ng-click="sc.openModal(sc.item)" />
+            </div>
+        </div>
+        <div class="text-center">
+            <button ng-repeat="setting in sc.settings"
+                    class="btn btn-simple"
+                    ng-class="{
+                    'btn-nonsocial': setting.settingId == 1 || setting.settingId == 4 || setting.settingId == 9,
+                    'btn-twitter': setting.settingId == 5,
+                    'btn-instagram': setting.settingId == 6,
+                    'btn-pinterest': setting.settingId == 7
+                    }"
+                    ng-click="sc.addSetting(setting)">
+                <i ng-if="setting.settingId == 5" class="fa fa-twitter"></i>
+                <i ng-if="setting.settingId == 6" class="fa fa-instagram"></i>
+                <i ng-if="setting.settingId == 7" class="fa fa-pinterest"></i>
+                {{ setting.btnText }}
+                <div class="ripple-container"></div>
+            </button>
+        </div>
+        <div class="settings-container col-md-offset-2 col-xs-offset-1 col-md-10">
+            <form id="videoForm" name="videoForm" autocomplete="off" novalidate ng-submit="sc.uploadVideo(sc.videoUrl, videoForm.$valid)">
+                <h5 class="panel-title" id="urlTitle">Enter a video URL</h5>
+                <div class="row form-inline" id="urlFormAndBtn" ng-class="{'error': (videoForm.videoUrl.$pristine && !videoForm.videoUrl.$invalid && videoForm.$submitted) || (videoForm.videoUrl.$error.pattern && videoForm.videoUrl.$submitted)}">
+                    <input type="text" class="inline text-center"
+                           id="videoUrl" name="videoUrl"
+                           ng-model="sc.videoUrl"
+                           placeholder="{{sc.videoUrlPlaceholder}}"
+                           ng-pattern="sc.pattern" />
+                    <button type="submit" class="uploadVideoBtn inline btn-rose" id="uploadVideoBtn" name="uploadVideoBtn" enterPress ng-disabled="videoForm.$invalid || videoForm.$pristine">
+                        <i class="material-icons addBPicture form-inline">file_upload</i>Save Video
+                    </button>
+                    <p ng-if="videoForm.$error.pattern">Please enter a valid URL</p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
