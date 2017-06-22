@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "AccountWizardNg";
+    ViewBag.Title = "Account";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -19,14 +19,14 @@
         <div class="col-md-8 col-sm-offset-2">
             <!--      Wizard container        -->
             <div class="wizard-container">
-                <div class="card wizard-card" data-color="rose" id="wizardProfile">
-                    <div class="wizard-header">
-                        <h2 class="wizard-title">
+                <div class="card" data-color="rose">
+                    <div class="header">
+                        <h2 class="title">
                             Your Account
                         </h2>
                     </div>
                     <!--        for the tab at the top of the card        -->
-                    <div class="wizard-navigation" ng-controller="accountTabController as acctTabCtrl" id="accountTabs">
+                    <div class="navigation" ng-controller="accountTabController as acctTabCtrl" id="accountTabs">
                         <ul class="nav-pills nav nav-tabs">
                             <li class="nav-pills nav nav-tabs tabs-admin"
                                 data-color="rose"
@@ -58,7 +58,6 @@
 
 @section scripts {
     <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-
 
     @*~~~~~~~~~~~~~~~~~~~~~factories (ordered alphabetically)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*@
     <script src="~/Scripts/app/account/factory/accountRouteConfig.js"></script>
@@ -98,7 +97,7 @@
     <script src="~/Scripts/app/account/controller/accountTabController.js"></script>
     <script src="~/Scripts/app/account/controller/accountPasswordController.js"></script>
     <script src="~/Scripts/app/account/controller/accountFormController.js"></script>
-    <script src="~/Scripts/app/account/controller/accountWizardController.js"></script>
+    <script src="~/Scripts/app/account/controller/accountController.js"></script>
     <script src="~/Scripts/app/account/controller/followerController.js"></script>
     <script src="~/Scripts/app/account/controller/pictureCropController.js"></script>
     <script src="~/Scripts/app/account/controller/settingsController.js"></script>
